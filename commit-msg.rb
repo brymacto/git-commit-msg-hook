@@ -27,9 +27,9 @@ end
 
 def abort
   puts "Aborting commit - commit message must start with the number of your working branch (##{ticket_number_from_branch_name})."
+  puts "Use --no-verify to skip this validation."
   exit 1
 end
 
-# run
-
-
+exit 0 if ARGV.include?('--no-verify')
+run
