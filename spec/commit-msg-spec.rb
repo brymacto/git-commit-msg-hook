@@ -1,7 +1,7 @@
 begin
   require_relative '../commit-msg'
 rescue SystemExit
-  # require_relative is needed for including the script.  Without it, rspec will exit before the tests are run.
+  # 'rescue' is needed for including the script.  Without it, rspec will exit before the tests are run.
 end
 
 
