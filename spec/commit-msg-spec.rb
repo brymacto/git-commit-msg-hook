@@ -1,4 +1,9 @@
-require_relative '../commit-msg'
+begin
+  require_relative '../commit-msg'
+rescue SystemExit
+  # require_relative is needed for including the script.  Without it, rspec will exit before the tests are run.
+end
+
 
 describe "commit message script" do
   it "Aborts if branch name starts with branch number, but commit message does not" do
